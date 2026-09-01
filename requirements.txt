@@ -1,0 +1,3 @@
+# LLM API access (OpenRouter, HTTP client) - only needed to re-run classification
+httpx>=0.27
+python-dotenv>=1.0
