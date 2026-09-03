@@ -1,0 +1,437 @@
+{
+  "suffix": "stability_20260901",
+  "corpora": {
+    "oppt": {
+      "stability_models": [
+        "deepseek/deepseek-v4-flash-0731",
+        "z-ai/glm-5.3-flash",
+        "moonshotai/kimi-k3"
+      ],
+      "distribution": {
+        "primary": {
+          "total": 6035,
+          "practice": 3607,
+          "commitment": 1013,
+          "user_control": 1415,
+          "practice_pct": 59.8,
+          "commitment_pct": 16.8,
+          "user_control_pct": 23.4
+        },
+        "stability": {
+          "total": 6055,
+          "practice": 3933,
+          "commitment": 732,
+          "user_control": 1390,
+          "practice_pct": 65.0,
+          "commitment_pct": 12.1,
+          "user_control_pct": 23.0
+        }
+      },
+      "company_ratios": {
+        "stability": {
+          "n_companies": 123,
+          "n_finite": 118,
+          "zero_commitment_companies": [
+            "chase",
+            "corecivic",
+            "magnet-forensics",
+            "penlink",
+            "tinder"
+          ],
+          "mean": 7.28,
+          "median": 5.0,
+          "std": 8.94,
+          "range": [
+            0.75,
+            59.0
+          ]
+        }
+      },
+      "per_category": {
+        "stability": {
+          "ANALYTICS": {
+            "practices": 1,
+            "commitments": 0,
+            "user_control": 0,
+            "ratio": null
+          },
+          "AUTOMATED_DECISIONS": {
+            "practices": 21,
+            "commitments": 8,
+            "user_control": 11,
+            "ratio": 2.62
+          },
+          "CHILDREN": {
+            "practices": 1,
+            "commitments": 1,
+            "user_control": 0,
+            "ratio": 1.0
+          },
+          "FIRST_PARTY": {
+            "practices": 1923,
+            "commitments": 304,
+            "user_control": 543,
+            "ratio": 6.33
+          },
+          "INTL_SPECIFIC": {
+            "practices": 71,
+            "commitments": 25,
+            "user_control": 3,
+            "ratio": 2.84
+          },
+          "MARKETING": {
+            "practices": 1,
+            "commitments": 0,
+            "user_control": 0,
+            "ratio": null
+          },
+          "RETENTION": {
+            "practices": 30,
+            "commitments": 22,
+            "user_control": 2,
+            "ratio": 1.36
+          },
+          "SALE_SHARING": {
+            "practices": 59,
+            "commitments": 68,
+            "user_control": 44,
+            "ratio": 0.87
+          },
+          "SECURITY": {
+            "practices": 311,
+            "commitments": 114,
+            "user_control": 18,
+            "ratio": 2.73
+          },
+          "SENSITIVE_DATA": {
+            "practices": 44,
+            "commitments": 17,
+            "user_control": 6,
+            "ratio": 2.59
+          },
+          "SERVICE_OPERATION": {
+            "practices": 2,
+            "commitments": 0,
+            "user_control": 0,
+            "ratio": null
+          },
+          "THIRD_PARTY": {
+            "practices": 983,
+            "commitments": 104,
+            "user_control": 94,
+            "ratio": 9.45
+          },
+          "TRACKING": {
+            "practices": 369,
+            "commitments": 32,
+            "user_control": 152,
+            "ratio": 11.53
+          },
+          "USER_ACCESS": {
+            "practices": 52,
+            "commitments": 25,
+            "user_control": 283,
+            "ratio": 2.08
+          },
+          "USER_CHOICE": {
+            "practices": 65,
+            "commitments": 12,
+            "user_control": 234,
+            "ratio": 5.42
+          }
+        }
+      },
+      "agreement": {
+        "primary": {
+          "fleiss_kappa": 0.8662,
+          "unanimous_rate": 0.89,
+          "majority_rate": 0.1058,
+          "split_rate": 0.0043
+        },
+        "stability": {
+          "fleiss_kappa": 0.9019,
+          "unanimous_rate": 0.9253,
+          "majority_rate": 0.0738,
+          "split_rate": 0.001
+        }
+      },
+      "gold_eval": {
+        "stability": {
+          "gold_n": 200,
+          "scored_n": 100,
+          "unscored_no_consensus": 100,
+          "accuracy": 0.97,
+          "per_class": {
+            "COMPANY_COMMITMENT": {
+              "precision": 0.958,
+              "recall": 0.92,
+              "f1": 0.939,
+              "n": 25
+            },
+            "PRACTICE": {
+              "precision": 0.958,
+              "recall": 0.979,
+              "f1": 0.968,
+              "n": 47
+            },
+            "USER_CONTROL": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "n": 28
+            }
+          },
+          "confusion": {
+            "COMPANY_COMMITMENT->COMPANY_COMMITMENT": 23,
+            "COMPANY_COMMITMENT->PRACTICE": 2,
+            "PRACTICE->COMPANY_COMMITMENT": 1,
+            "PRACTICE->PRACTICE": 46,
+            "USER_CONTROL->USER_CONTROL": 28
+          }
+        }
+      },
+      "contradiction_crossref": {
+        "stability": {
+          "n_zero": 45,
+          "n_has": 15,
+          "median_zero": 5.29,
+          "median_has": 4.25,
+          "U": 341.5,
+          "p_one_sided_greater": 0.4762,
+          "rank_biserial_r": -0.012
+        }
+      },
+      "security_boundary": {
+        "primary": {
+          "security_practices": 212,
+          "security_commitments": 209,
+          "ratio": 1.01,
+          "affirmative_present_tense_cc": 161,
+          "affirmative_share_pct": 77.0,
+          "reclassified_ratio": 7.77
+        },
+        "stability": {
+          "security_practices": 311,
+          "security_commitments": 114,
+          "ratio": 2.73,
+          "affirmative_present_tense_cc": 73,
+          "affirmative_share_pct": 64.0,
+          "reclassified_ratio": 9.37
+        }
+      },
+      "panel_churn": {
+        "common_labeled": 6029,
+        "agree": 5676,
+        "agreement_pct": 94.1,
+        "moves": {
+          "COMPANY_COMMITMENT->PRACTICE": 286,
+          "USER_CONTROL->PRACTICE": 42,
+          "PRACTICE->USER_CONTROL": 16,
+          "PRACTICE->COMPANY_COMMITMENT": 8,
+          "COMPANY_COMMITMENT->USER_CONTROL": 1
+        }
+      }
+    },
+    "opp115": {
+      "stability_models": [
+        "deepseek/deepseek-v4-flash-0731",
+        "z-ai/glm-5.3-flash",
+        "moonshotai/kimi-k3"
+      ],
+      "distribution": {
+        "primary": {
+          "total": 4946,
+          "practice": 3231,
+          "commitment": 807,
+          "user_control": 908,
+          "practice_pct": 65.3,
+          "commitment_pct": 16.3,
+          "user_control_pct": 18.4
+        },
+        "stability": {
+          "total": 4967,
+          "practice": 3467,
+          "commitment": 627,
+          "user_control": 873,
+          "practice_pct": 69.8,
+          "commitment_pct": 12.6,
+          "user_control_pct": 17.6
+        }
+      },
+      "company_ratios": {
+        "stability": {
+          "n_companies": 115,
+          "n_finite": 112,
+          "zero_commitment_companies": [
+            "restaurantnews.com",
+            "solarviews.com",
+            "wnep.com"
+          ],
+          "mean": 7.17,
+          "median": 5.52,
+          "std": 6.77,
+          "range": [
+            0.0,
+            41.0
+          ]
+        }
+      },
+      "per_category": {
+        "stability": {
+          "ACCESS_CONTROL": {
+            "practices": 0,
+            "commitments": 0,
+            "user_control": 2,
+            "ratio": null
+          },
+          "FIRST_PARTY": {
+            "practices": 1789,
+            "commitments": 279,
+            "user_control": 421,
+            "ratio": 6.41
+          },
+          "INTL_SPECIFIC": {
+            "practices": 58,
+            "commitments": 7,
+            "user_control": 18,
+            "ratio": 8.29
+          },
+          "RETENTION": {
+            "practices": 15,
+            "commitments": 8,
+            "user_control": 1,
+            "ratio": 1.88
+          },
+          "SALE_SHARING": {
+            "practices": 12,
+            "commitments": 31,
+            "user_control": 2,
+            "ratio": 0.39
+          },
+          "SECURITY": {
+            "practices": 290,
+            "commitments": 95,
+            "user_control": 7,
+            "ratio": 3.05
+          },
+          "THIRD_PARTY": {
+            "practices": 995,
+            "commitments": 181,
+            "user_control": 98,
+            "ratio": 5.5
+          },
+          "TRACKING": {
+            "practices": 241,
+            "commitments": 14,
+            "user_control": 66,
+            "ratio": 17.21
+          },
+          "USER_ACCESS": {
+            "practices": 12,
+            "commitments": 3,
+            "user_control": 64,
+            "ratio": 4.0
+          },
+          "USER_CHOICE": {
+            "practices": 55,
+            "commitments": 9,
+            "user_control": 194,
+            "ratio": 6.11
+          }
+        }
+      },
+      "agreement": {
+        "primary": {
+          "fleiss_kappa": 0.8549,
+          "unanimous_rate": 0.8905,
+          "majority_rate": 0.1037,
+          "split_rate": 0.0058
+        },
+        "stability": {
+          "fleiss_kappa": 0.9006,
+          "unanimous_rate": 0.9313,
+          "majority_rate": 0.0671,
+          "split_rate": 0.0016
+        }
+      },
+      "gold_eval": {
+        "stability": {
+          "gold_n": 200,
+          "scored_n": 100,
+          "unscored_no_consensus": 100,
+          "accuracy": 0.95,
+          "per_class": {
+            "COMPANY_COMMITMENT": {
+              "precision": 0.958,
+              "recall": 0.92,
+              "f1": 0.939,
+              "n": 25
+            },
+            "PRACTICE": {
+              "precision": 0.955,
+              "recall": 0.933,
+              "f1": 0.944,
+              "n": 45
+            },
+            "USER_CONTROL": {
+              "precision": 0.938,
+              "recall": 1.0,
+              "f1": 0.968,
+              "n": 30
+            }
+          },
+          "confusion": {
+            "COMPANY_COMMITMENT->COMPANY_COMMITMENT": 23,
+            "COMPANY_COMMITMENT->PRACTICE": 2,
+            "PRACTICE->COMPANY_COMMITMENT": 1,
+            "PRACTICE->PRACTICE": 42,
+            "PRACTICE->USER_CONTROL": 2,
+            "USER_CONTROL->USER_CONTROL": 30
+          }
+        }
+      },
+      "contradiction_crossref": {
+        "stability": {
+          "n_zero": 39,
+          "n_has": 42,
+          "median_zero": 6.6,
+          "median_has": 6.49,
+          "U": 771.0,
+          "p_one_sided_greater": 0.6767,
+          "rank_biserial_r": 0.059
+        }
+      },
+      "security_boundary": {
+        "primary": {
+          "security_practices": 198,
+          "security_commitments": 182,
+          "ratio": 1.09,
+          "affirmative_present_tense_cc": 130,
+          "affirmative_share_pct": 71.4,
+          "reclassified_ratio": 6.31
+        },
+        "stability": {
+          "security_practices": 290,
+          "security_commitments": 95,
+          "ratio": 3.05,
+          "affirmative_present_tense_cc": 51,
+          "affirmative_share_pct": 53.7,
+          "reclassified_ratio": 7.75
+        }
+      },
+      "panel_churn": {
+        "common_labeled": 4941,
+        "agree": 4690,
+        "agreement_pct": 94.9,
+        "moves": {
+          "COMPANY_COMMITMENT->PRACTICE": 183,
+          "USER_CONTROL->PRACTICE": 47,
+          "PRACTICE->USER_CONTROL": 12,
+          "PRACTICE->COMPANY_COMMITMENT": 6,
+          "COMPANY_COMMITMENT->USER_CONTROL": 2,
+          "USER_CONTROL->COMPANY_COMMITMENT": 1
+        }
+      }
+    }
+  }
+}

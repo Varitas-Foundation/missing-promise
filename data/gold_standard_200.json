@@ -3,18 +3,34 @@
     "created_date": "2026-02-05T20:00:06Z",
     "total_statements": 200,
     "sampling_strategy": "Stratified sample: 50 high-confidence COMPANY_COMMITMENT, 50 high-confidence PRACTICE, 50 high-confidence USER_CONTROL, 50 AMBIGUOUS/low-confidence/disagreement cases. 100 from OPPT corpus, 100 from OPP-115 corpus. Company diversity enforced (143 unique companies). Random seed=42 for reproducibility.",
-    "annotation_guidelines": "Gold labels assigned based on speech act theory (Austin 1962, Searle 1976). PRACTICE = assertive speech acts describing what company does with data. COMPANY_COMMITMENT = commissive speech acts where company binds itself to limitations or promises. USER_CONTROL = descriptions of user capabilities, rights, or choices. Key edge case rules: (1) Negated practices ('we do not sell') = COMPANY_COMMITMENT; (2) Epistemic hedges ('we may share') = PRACTICE; (3) Scope disclaimers ('we are not responsible for third parties') = PRACTICE; (4) Security disclaimers ('cannot guarantee') = COMPANY_COMMITMENT; (5) DNT non-response ('does not respond to DNT') = PRACTICE (describes behavior, not privacy-protective promise); (6) User obligations placed by company = PRACTICE.",
-    "annotator": "Claude Opus 4.6 (single-annotator gold standard; limitations noted)",
+    "annotation_guidelines": "Gold labels assigned based on speech act theory (Austin 1962, Searle 1976). PRACTICE = assertive speech acts describing what company does with data. COMPANY_COMMITMENT = commissive speech acts where company binds itself to limitations or promises. USER_CONTROL = descriptions of user capabilities, rights, or choices. Key edge case rules: (1) Negated practices ('we do not sell') = COMPANY_COMMITMENT; (2) Epistemic hedges ('we may share') = PRACTICE; (3) Scope disclaimers ('we are not responsible for third parties') = PRACTICE; (4) Security disclaimers ('cannot guarantee') = PRACTICE (disclaimer of limitation, not a promise; corrected 2026-09-01, see corrections); (5) DNT non-response ('does not respond to DNT') = PRACTICE (describes behavior, not privacy-protective promise); (6) User obligations placed by company = PRACTICE.",
+    "annotator": "Thomas Brackin (author, CIPP/US). Candidate labels were proposed by Claude Opus 4.6 and each label was adjudicated by the author; single-adjudicator reference set, limitations noted in the paper.",
     "source_corpora": [
       "OPPT (Open Privacy Policy Taxonomy)",
       "OPP-115"
     ],
-    "random_seed": 42
+    "random_seed": 42,
+    "corrections": [
+      {
+        "date": "2026-09-01",
+        "statement_ids": [
+          "midjourney_007_s2",
+          "corecivic_010_s2",
+          "vercel_012_s2",
+          "taylorswift.com_015_s2",
+          "post-gazette.com_023_s1",
+          "barnesandnoble.com_069_s1"
+        ],
+        "from": "COMPANY_COMMITMENT",
+        "to": "PRACTICE",
+        "reason": "Draft guideline item (4) labeled security disclaimers as commitments, contradicting the binding-force criterion and prompt edge case 4. Six disclaimer statements (cannot guarantee / cannot promise) corrected. Pre-correction primary-panel accuracy: 185/198 (93.4%), commitment recall 0.857."
+      }
+    ]
   },
   "summary": {
     "gold_distribution": {
-      "COMPANY_COMMITMENT": 56,
-      "PRACTICE": 86,
+      "COMPANY_COMMITMENT": 50,
+      "PRACTICE": 92,
       "USER_CONTROL": 58
     },
     "difficulty_distribution": {
@@ -22,10 +38,10 @@
       "hard": 16,
       "medium": 33
     },
-    "agreement_with_original": 123,
-    "agreement_with_original_pct": 61.5,
-    "agreement_with_classifier": 138,
-    "agreement_with_classifier_pct": 69.0,
+    "agreement_with_original": 117,
+    "agreement_with_original_pct": 58.5,
+    "agreement_with_classifier": 132,
+    "agreement_with_classifier_pct": 66.0,
     "source_distribution": {
       "OPPT": 100,
       "OPP-115": 100
@@ -231,8 +247,8 @@
       "classifier_type": "COMPANY_COMMITMENT",
       "classifier_confidence": 0.95,
       "classifier_rule": "company_negation",
-      "gold_label": "COMPANY_COMMITMENT",
-      "reasoning": "While 'cannot guarantee absolute security' is a disclaimer, it is still a commissive speech act -- the company is binding itself by acknowledging the limits of its promise. This is a qualified commitment (or anti-commitment). However, functionally it is a PRACTICE-like disclaimer. Edge case: classifying as COMPANY_COMMITMENT because it uses commissive language about the company's own capabilities.",
+      "gold_label": "PRACTICE",
+      "reasoning": "While 'cannot guarantee absolute security' is a disclaimer, it is still a commissive speech act -- the company is binding itself by acknowledging the limits of its promise. This is a qualified commitment (or anti-commitment). However, functionally it is a PRACTICE-like disclaimer. Edge case: classifying as COMPANY_COMMITMENT because it uses commissive language about the company's own capabilities. [Corrected 2026-09-01 from COMPANY_COMMITMENT to PRACTICE: a disclaimer of limitation constrains no future behavior and is non-binding under the binding-force criterion (paper Section 3.1) and edge case 4 of the classification prompt.]",
       "difficulty": "hard",
       "stratum": "commitment"
     },
@@ -261,8 +277,8 @@
       "classifier_type": "COMPANY_COMMITMENT",
       "classifier_confidence": 0.95,
       "classifier_rule": "company_negation",
-      "gold_label": "COMPANY_COMMITMENT",
-      "reasoning": "Similar to [11], 'cannot guarantee the security' is a disclaimer about company limitations. Commissive framing about what the company cannot promise. Classified as COMPANY_COMMITMENT (negative commitment/disclaimer).",
+      "gold_label": "PRACTICE",
+      "reasoning": "Similar to [11], 'cannot guarantee the security' is a disclaimer about company limitations. Commissive framing about what the company cannot promise. Classified as COMPANY_COMMITMENT (negative commitment/disclaimer). [Corrected 2026-09-01 from COMPANY_COMMITMENT to PRACTICE: a disclaimer of limitation constrains no future behavior and is non-binding under the binding-force criterion (paper Section 3.1) and edge case 4 of the classification prompt.]",
       "difficulty": "hard",
       "stratum": "commitment"
     },
@@ -321,8 +337,8 @@
       "classifier_type": "COMPANY_COMMITMENT",
       "classifier_confidence": 0.95,
       "classifier_rule": "company_negation",
-      "gold_label": "COMPANY_COMMITMENT",
-      "reasoning": "'Cannot guarantee absolute security' is a negative commitment/disclaimer about the company's own guarantees. The company is speaking about the bounds of its own promises.",
+      "gold_label": "PRACTICE",
+      "reasoning": "'Cannot guarantee absolute security' is a negative commitment/disclaimer about the company's own guarantees. The company is speaking about the bounds of its own promises. [Corrected 2026-09-01 from COMPANY_COMMITMENT to PRACTICE: a disclaimer of limitation constrains no future behavior and is non-binding under the binding-force criterion (paper Section 3.1) and edge case 4 of the classification prompt.]",
       "difficulty": "hard",
       "stratum": "commitment"
     },
@@ -471,8 +487,8 @@
       "classifier_type": "COMPANY_COMMITMENT",
       "classifier_confidence": 0.95,
       "classifier_rule": "company_negation",
-      "gold_label": "COMPANY_COMMITMENT",
-      "reasoning": "'Cannot guarantee complete security' is a negative commitment/disclaimer about the company's security guarantees.",
+      "gold_label": "PRACTICE",
+      "reasoning": "'Cannot guarantee complete security' is a negative commitment/disclaimer about the company's security guarantees. [Corrected 2026-09-01 from COMPANY_COMMITMENT to PRACTICE: a disclaimer of limitation constrains no future behavior and is non-binding under the binding-force criterion (paper Section 3.1) and edge case 4 of the classification prompt.]",
       "difficulty": "hard",
       "stratum": "commitment"
     },
@@ -531,8 +547,8 @@
       "classifier_type": "COMPANY_COMMITMENT",
       "classifier_confidence": 0.95,
       "classifier_rule": "company_negation",
-      "gold_label": "COMPANY_COMMITMENT",
-      "reasoning": "'Cannot promise to protect personal information at all times' is a negative commitment/disclaimer about the limits of the company's security promise.",
+      "gold_label": "PRACTICE",
+      "reasoning": "'Cannot promise to protect personal information at all times' is a negative commitment/disclaimer about the limits of the company's security promise. [Corrected 2026-09-01 from COMPANY_COMMITMENT to PRACTICE: a disclaimer of limitation constrains no future behavior and is non-binding under the binding-force criterion (paper Section 3.1) and edge case 4 of the classification prompt.]",
       "difficulty": "hard",
       "stratum": "commitment"
     },
@@ -651,8 +667,8 @@
       "classifier_type": "COMPANY_COMMITMENT",
       "classifier_confidence": 0.95,
       "classifier_rule": "company_negation",
-      "gold_label": "COMPANY_COMMITMENT",
-      "reasoning": "'Cannot guarantee absolute security' is a negative commitment/disclaimer. The company speaks about the bounds of its own promises.",
+      "gold_label": "PRACTICE",
+      "reasoning": "'Cannot guarantee absolute security' is a negative commitment/disclaimer. The company speaks about the bounds of its own promises. [Corrected 2026-09-01 from COMPANY_COMMITMENT to PRACTICE: a disclaimer of limitation constrains no future behavior and is non-binding under the binding-force criterion (paper Section 3.1) and edge case 4 of the classification prompt.]",
       "difficulty": "hard",
       "stratum": "commitment"
     },

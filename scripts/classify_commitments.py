@@ -108,7 +108,15 @@ class OpenRouterClient:
         payload = {
             "model": model,
             "messages": [{"role": "user", "content": prompt}],
-            "max_tokens": 512,
+            # 4096 (was 512): reasoning models (e.g. glm-5.3-flash) consume
+            # completion budget on reasoning tokens before emitting content;
+            # at 512 they can return empty content (same failure mode as the
+            # privacy washing stability judge stage, commit 1c20938). Observed
+            # completions for this task run ~200-600 tokens including
+            # reasoning; 4096 gives ample headroom while halving OpenRouter's
+            # per-request credit pre-authorization vs 8192 (concurrent 8192
+            # reservations triggered HTTP 402 on a low-balance account).
+            "max_tokens": 4096,
             "temperature": 0,
         }
 
@@ -124,6 +132,23 @@ class OpenRouterClient:
                 data = response.json()
                 raw = (data["choices"][0]["message"].get("content") or "").strip()
                 usage = data.get("usage", {})
+
+                # Empty content despite HTTP 200: transient provider failure
+                # (observed with reasoning models); retry like a rate limit.
+                # Same fix as the privacy washing stability judge stage.
+                if not raw:
+                    return {
+                        "classification": None,
+                        "reasoning": "",
+                        "raw_response": "",
+                        "valid": False,
+                        "judge_id": judge_id,
+                        "model": model,
+                        "provider": model.split("/")[0] if "/" in model else "unknown",
+                        "timestamp": datetime.now(timezone.utc).isoformat(),
+                        "error": "EMPTY_CONTENT",
+                        "retry": True,
+                    }
 
                 parsed = _parse_response(raw)
 
@@ -141,8 +166,9 @@ class OpenRouterClient:
 
         except httpx.HTTPStatusError as e:
             status = e.response.status_code
-            if status == 429:
-                # Rate limited — caller should retry
+            if status == 429 or status == 402 or status >= 500:
+                # Retryable: rate limit, credit pre-authorization collision
+                # (402 under concurrent reservations), or transient 5xx.
                 return {
                     "classification": None,
                     "reasoning": "",
@@ -152,7 +178,7 @@ class OpenRouterClient:
                     "model": model,
                     "provider": model.split("/")[0] if "/" in model else "unknown",
                     "timestamp": datetime.now(timezone.utc).isoformat(),
-                    "error": f"RATE_LIMITED (HTTP 429)",
+                    "error": f"RETRYABLE (HTTP {status})",
                     "retry": True,
                 }
             return {
@@ -433,10 +459,24 @@ def main():
     parser.add_argument("--companies", nargs="*", help="Only classify these companies")
     parser.add_argument("--sample", type=int, default=None, help="Random sample of N statements")
     parser.add_argument("--seed", type=int, default=42, help="Random seed for sampling")
+    parser.add_argument("--output-suffix", default=None,
+                        help="Write to {corpus}_commitment_classifications_{suffix}.json "
+                             "instead of overwriting the primary output")
+    parser.add_argument("--judge-panel", action="store_true",
+                        help="Use JUDGE_MODEL_1/2/3 from .env (separated stability panel) "
+                             "instead of the legacy MULTIMODEL_1/2/3 panel")
+    parser.add_argument("--retry-insufficient", action="store_true",
+                        help="With --resume: re-run statements whose stored result is "
+                             "insufficient_valid (fewer than 2 valid judge responses, "
+                             "e.g. after transient HTTP 402/5xx errors)")
     args = parser.parse_args()
 
     # Models
-    models = args.models or JUDGE_MODELS
+    if args.judge_panel and not args.models:
+        panel = [os.environ.get(f"JUDGE_MODEL_{i}", "").strip().strip('"').strip("'") for i in (1, 2, 3)]
+        models = panel
+    else:
+        models = args.models or JUDGE_MODELS
     if not all(models):
         print("ERROR: Set MULTIMODEL_1/2/3 in .env or use --models flag")
         sys.exit(1)
@@ -470,7 +510,10 @@ def main():
         print(f"  Sampled: {len(statements)}")
 
     # Output path
-    output_path = OUTPUT_DIR / f"{args.corpus}_commitment_classifications.json"
+    if args.output_suffix:
+        output_path = OUTPUT_DIR / f"{args.corpus}_commitment_classifications_{args.output_suffix}.json"
+    else:
+        output_path = OUTPUT_DIR / f"{args.corpus}_commitment_classifications.json"
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     # Resume support
@@ -480,6 +523,11 @@ def main():
         with open(output_path) as f:
             existing = json.load(f)
         existing_results = existing.get("results", [])
+        if args.retry_insufficient:
+            dropped = [r for r in existing_results if r.get("consensus_type") == "insufficient_valid"]
+            existing_results = [r for r in existing_results if r.get("consensus_type") != "insufficient_valid"]
+            if dropped:
+                print(f"  Retrying {len(dropped)} insufficient_valid statements")
         completed_ids = {r["statement_id"] for r in existing_results}
         print(f"  Resuming: {len(completed_ids)} already classified")
 
@@ -516,17 +564,17 @@ def main():
 
     parallel = args.parallel
     if parallel > 1:
+        # Sliding window: one executor over all statements, so a single slow
+        # judge call delays only its own statement, not a whole batch.
         print(f"  Running {parallel} statements in parallel ({parallel * 3} concurrent API calls)")
 
         completed = 0
-        # Process in batches
-        for batch_start in range(0, len(remaining), parallel):
-            batch = list(enumerate(remaining[batch_start:batch_start + parallel], start=batch_start))
-
-            with ThreadPoolExecutor(max_workers=parallel) as batch_executor:
-                futures = {batch_executor.submit(_classify_one, item): item for item in batch}
-                for future in as_completed(futures):
-                    idx, result = future.result()
+        with ThreadPoolExecutor(max_workers=parallel) as batch_executor:
+            futures = {batch_executor.submit(_classify_one, item): item
+                       for item in enumerate(remaining)}
+            for future in as_completed(futures):
+                idx, result = future.result()
+                with results_lock:
                     results.append(result)
 
                     # Track usage
@@ -544,11 +592,11 @@ def main():
                     completed += 1
                     cls = result["final_classification"] or "SPLIT"
                     consensus = result["consensus_type"]
-                    print(f"  [{completed}/{len(remaining)}] {result['company']}: {cls} ({consensus})")
+                    print(f"  [{completed}/{len(remaining)}] {result['company']}: {cls} ({consensus})", flush=True)
 
-            # Save after each batch
-            _save_results(output_path, results, models, args.corpus, prompt_hash,
-                         started_at, total_usage)
+                    if completed % save_interval == 0:
+                        _save_results(output_path, results, models, args.corpus, prompt_hash,
+                                      started_at, total_usage)
     else:
         # Sequential mode (original behavior)
         for i, stmt in enumerate(remaining):

@@ -7,7 +7,20 @@
       "google/gemini-3-flash-preview"
     ],
     "gold_standard_file": "research/empty_promise/data/gold_standard_200.json",
-    "total_statements": 200
+    "total_statements": 200,
+    "gold_label_corrections": {
+      "date": "2026-09-01",
+      "statement_ids": [
+        "midjourney_007_s2",
+        "corecivic_010_s2",
+        "vercel_012_s2",
+        "taylorswift.com_015_s2",
+        "post-gazette.com_023_s1",
+        "barnesandnoble.com_069_s1"
+      ],
+      "from": "COMPANY_COMMITMENT",
+      "to": "PRACTICE"
+    }
   },
   "results": [
     {
@@ -1326,7 +1339,7 @@
         "judge_2_vs_judge_3": true
       },
       "needs_review": false,
-      "gold_label": "COMPANY_COMMITMENT",
+      "gold_label": "PRACTICE",
       "difficulty": "hard",
       "stratum": "commitment"
     },
@@ -1546,7 +1559,7 @@
         "judge_2_vs_judge_3": true
       },
       "needs_review": false,
-      "gold_label": "COMPANY_COMMITMENT",
+      "gold_label": "PRACTICE",
       "difficulty": "hard",
       "stratum": "commitment"
     },
@@ -1986,7 +1999,7 @@
         "judge_2_vs_judge_3": true
       },
       "needs_review": false,
-      "gold_label": "COMPANY_COMMITMENT",
+      "gold_label": "PRACTICE",
       "difficulty": "hard",
       "stratum": "commitment"
     },
@@ -3087,7 +3100,7 @@
         "judge_2_vs_judge_3": true
       },
       "needs_review": false,
-      "gold_label": "COMPANY_COMMITMENT",
+      "gold_label": "PRACTICE",
       "difficulty": "hard",
       "stratum": "commitment"
     },
@@ -3528,7 +3541,7 @@
         "judge_2_vs_judge_3": true
       },
       "needs_review": false,
-      "gold_label": "COMPANY_COMMITMENT",
+      "gold_label": "PRACTICE",
       "difficulty": "hard",
       "stratum": "commitment"
     },
@@ -4408,7 +4421,7 @@
         "judge_2_vs_judge_3": true
       },
       "needs_review": false,
-      "gold_label": "COMPANY_COMMITMENT",
+      "gold_label": "PRACTICE",
       "difficulty": "hard",
       "stratum": "commitment"
     },
