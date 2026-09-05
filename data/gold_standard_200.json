@@ -3,7 +3,7 @@
     "created_date": "2026-02-05T20:00:06Z",
     "total_statements": 200,
     "sampling_strategy": "Stratified sample: 50 high-confidence COMPANY_COMMITMENT, 50 high-confidence PRACTICE, 50 high-confidence USER_CONTROL, 50 AMBIGUOUS/low-confidence/disagreement cases. 100 from OPPT corpus, 100 from OPP-115 corpus. Company diversity enforced (143 unique companies). Random seed=42 for reproducibility.",
-    "annotation_guidelines": "Gold labels assigned based on speech act theory (Austin 1962, Searle 1976). PRACTICE = assertive speech acts describing what company does with data. COMPANY_COMMITMENT = commissive speech acts where company binds itself to limitations or promises. USER_CONTROL = descriptions of user capabilities, rights, or choices. Key edge case rules: (1) Negated practices ('we do not sell') = COMPANY_COMMITMENT; (2) Epistemic hedges ('we may share') = PRACTICE; (3) Scope disclaimers ('we are not responsible for third parties') = PRACTICE; (4) Security disclaimers ('cannot guarantee') = PRACTICE (disclaimer of limitation, not a promise; corrected 2026-09-01, see corrections); (5) DNT non-response ('does not respond to DNT') = PRACTICE (describes behavior, not privacy-protective promise); (6) User obligations placed by company = PRACTICE.",
+    "annotation_guidelines": "Gold labels assigned based on speech act theory (Austin 1962, Searle 1976). PRACTICE = assertive speech acts describing what company does with data. COMPANY_COMMITMENT = commissive speech acts where company binds itself to limitations or promises. USER_CONTROL = descriptions of user capabilities, rights, or choices. Key edge case rules: (1) Negated practices ('we do not sell') = COMPANY_COMMITMENT; (2) Epistemic hedges ('we may share') = PRACTICE; (3) Scope disclaimers ('we are not responsible for third parties') = PRACTICE; (4) Security disclaimers ('cannot guarantee') = PRACTICE (disclaimer of limitation, not a promise; corrected 2026-09-01, see corrections); (5) DNT non-response ('does not respond to DNT') = PRACTICE (describes behavior, not privacy-protective promise); (6) User obligations placed by company = PRACTICE. (7) Affirmative present-tense protective statements naming a specific measure or a bounded scope that a concrete behavior would violate = COMPANY_COMMITMENT; purely aspirational protective statements ('takes steps', 'reasonable safeguards') = PRACTICE (operative rule stated in paper Section 3.1; applied in the 2026-09-05 correction and in the supplementary marker-free sample).",
     "annotator": "Thomas Brackin (author, CIPP/US). Candidate labels were proposed by Claude Opus 4.6 and each label was adjudicated by the author; single-adjudicator reference set, limitations noted in the paper.",
     "source_corpora": [
       "OPPT (Open Privacy Policy Taxonomy)",
@@ -24,13 +24,23 @@
         "from": "COMPANY_COMMITMENT",
         "to": "PRACTICE",
         "reason": "Draft guideline item (4) labeled security disclaimers as commitments, contradicting the binding-force criterion and prompt edge case 4. Six disclaimer statements (cannot guarantee / cannot promise) corrected. Pre-correction primary-panel accuracy: 185/198 (93.4%), commitment recall 0.857."
+      },
+      {
+        "date": "2026-09-05",
+        "statement_ids": [
+          "communitycoffee.com_002_s1"
+        ],
+        "from": "PRACTICE",
+        "to": "COMPANY_COMMITMENT",
+        "reason": "The operative rule for affirmative present-tense protective statements (paper Section 3.1: a named measure or bounded scope that a concrete behavior would violate is a commitment; a purely aspirational statement is a practice) classifies the encryption statement as a commitment, and the 60-statement supplementary marker-free sample was adjudicated under that rule. Both judge panels label the statement PRACTICE, so the correction lowers reported accuracy: primary panel 191/198 (96.5%) to 190/198 (96.0%), commitment recall 0.960 to 0.941; separated panel 192/200 (96.0%) to 191/200 (95.5%); no-name ablation 196/200 (98.0%) to 195/200 (97.5%)."
       }
-    ]
+    ],
+    "summary_recomputed": "2026-09-05: gold_distribution, agreement_with_original, and classifier_error_analysis (rule-based prototype versus gold labels) recomputed from the current labels after the second correction; the classifier_error_analysis block had not been refreshed after the 2026-09-01 corrections and still reflected the pre-correction labels."
   },
   "summary": {
     "gold_distribution": {
-      "COMPANY_COMMITMENT": 50,
-      "PRACTICE": 92,
+      "COMPANY_COMMITMENT": 51,
+      "PRACTICE": 91,
       "USER_CONTROL": 58
     },
     "difficulty_distribution": {
@@ -38,8 +48,8 @@
       "hard": 16,
       "medium": 33
     },
-    "agreement_with_original": 117,
-    "agreement_with_original_pct": 58.5,
+    "agreement_with_original": 116,
+    "agreement_with_original_pct": 58.0,
     "agreement_with_classifier": 132,
     "agreement_with_classifier_pct": 66.0,
     "source_distribution": {
@@ -54,18 +64,18 @@
     },
     "unique_companies": 143,
     "classifier_error_analysis": {
-      "false_negatives_commitment": 14,
-      "false_positives_commitment": 8,
-      "false_negatives_practice": 42,
+      "false_negatives_commitment": 15,
+      "false_positives_commitment": 14,
+      "false_negatives_practice": 47,
       "false_positives_practice": 9,
       "false_negatives_user_control": 6,
       "false_positives_user_control": 1,
-      "COMPANY_COMMITMENT_precision": 0.84,
-      "COMPANY_COMMITMENT_recall": 0.75,
-      "COMPANY_COMMITMENT_f1": 0.792,
+      "COMPANY_COMMITMENT_precision": 0.72,
+      "COMPANY_COMMITMENT_recall": 0.706,
+      "COMPANY_COMMITMENT_f1": 0.713,
       "PRACTICE_precision": 0.83,
-      "PRACTICE_recall": 0.512,
-      "PRACTICE_f1": 0.633,
+      "PRACTICE_recall": 0.484,
+      "PRACTICE_f1": 0.611,
       "USER_CONTROL_precision": 0.981,
       "USER_CONTROL_recall": 0.897,
       "USER_CONTROL_f1": 0.937
@@ -2857,8 +2867,8 @@
       "classifier_type": "AMBIGUOUS",
       "classifier_confidence": 0.3,
       "classifier_rule": "no_match",
-      "gold_label": "PRACTICE",
-      "reasoning": "'Orders are processed through a secure server that encrypts all user input information' describes a security implementation practice. Assertive.",
+      "gold_label": "COMPANY_COMMITMENT",
+      "reasoning": "'Orders are processed through a secure server that encrypts all user input information' describes a security implementation practice. Assertive. [Corrected 2026-09-05 from PRACTICE to COMPANY_COMMITMENT: the statement names a specific measure (encryption of all user input during order processing) that a concrete behavior would violate, which the operative rule for affirmative protective statements (paper Section 3.1) classifies as a commitment; the supplementary marker-free sample was adjudicated under the same rule. Both judge panels label it PRACTICE, so the correction lowers reported accuracy.]",
       "difficulty": "medium",
       "stratum": "hard_ambiguous"
     },

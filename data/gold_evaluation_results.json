@@ -20,6 +20,15 @@
       ],
       "from": "COMPANY_COMMITMENT",
       "to": "PRACTICE"
+    },
+    "gold_label_corrections_20260905": {
+      "date": "2026-09-05",
+      "statement_ids": [
+        "communitycoffee.com_002_s1"
+      ],
+      "from": "PRACTICE",
+      "to": "COMPANY_COMMITMENT",
+      "reason": "The operative rule for affirmative present-tense protective statements (paper Section 3.1: a named measure or bounded scope that a concrete behavior would violate is a commitment; a purely aspirational statement is a practice) classifies the encryption statement as a commitment, and the 60-statement supplementary marker-free sample was adjudicated under that rule. Both judge panels label the statement PRACTICE, so the correction lowers reported accuracy: primary panel 191/198 (96.5%) to 190/198 (96.0%), commitment recall 0.960 to 0.941; separated panel 192/200 (96.0%) to 191/200 (95.5%); no-name ablation 196/200 (98.0%) to 195/200 (97.5%)."
     }
   },
   "results": [
@@ -20494,7 +20503,7 @@
         "judge_2_vs_judge_3": false
       },
       "needs_review": false,
-      "gold_label": "PRACTICE",
+      "gold_label": "COMPANY_COMMITMENT",
       "difficulty": "medium",
       "stratum": "hard_ambiguous"
     },

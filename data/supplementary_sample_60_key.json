@@ -1,0 +1,542 @@
+[
+ {
+  "statement_id": "msn.com_007_s4",
+  "corpus": "OPP-115",
+  "company": "msn.com",
+  "text": "The company removes cookies and other cross-session identifiers after 18 months of retention.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "COMPANY_COMMITMENT",
+  "stratum": "A"
+ },
+ {
+  "statement_id": "avast_009_s1",
+  "corpus": "OPPT",
+  "company": "avast",
+  "text": "The company maintains administrative, technical, and physical safeguards for personal data protection.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "PRACTICE",
+  "stratum": "B"
+ },
+ {
+  "statement_id": "playstation.com_039_s2",
+  "corpus": "OPP-115",
+  "company": "playstation.com",
+  "text": "The company follows United States data protection and privacy regulations when processing personal data in the United States.",
+  "primary": "PRACTICE",
+  "separated": "PRACTICE",
+  "stratum": "C"
+ },
+ {
+  "statement_id": "uber_046_s4",
+  "corpus": "OPPT",
+  "company": "uber",
+  "text": "Uber retains user-submitted selfies for identity verification for 3 years.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "PRACTICE",
+  "stratum": "B"
+ },
+ {
+  "statement_id": "betterhelp_032_s4",
+  "corpus": "OPPT",
+  "company": "betterhelp",
+  "text": "BetterHelp remains liable under DPF Principles if its agents process personal data inconsistently with DPF Principles.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "COMPANY_COMMITMENT",
+  "stratum": "A"
+ },
+ {
+  "statement_id": "flock-safety_008_s1",
+  "corpus": "OPPT",
+  "company": "flock-safety",
+  "text": "Flock complies with the Data Privacy Framework Principles for all personal data transfers from the EU.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "COMPANY_COMMITMENT",
+  "stratum": "A"
+ },
+ {
+  "statement_id": "instacart_013_s1",
+  "corpus": "OPPT",
+  "company": "instacart",
+  "text": "The company employs reasonable administrative, physical, and technical measures to protect personal information from unauthorized access, use, and disclosure.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "PRACTICE",
+  "stratum": "B"
+ },
+ {
+  "statement_id": "epic-games_007_s2",
+  "corpus": "OPPT",
+  "company": "epic-games",
+  "text": "Epic collects parent/guardian email address when a user indicates they are a child to provide notice and seek consent.",
+  "primary": "PRACTICE",
+  "separated": "PRACTICE",
+  "stratum": "C"
+ },
+ {
+  "statement_id": "allstate.com_001_s1",
+  "corpus": "OPP-115",
+  "company": "allstate.com",
+  "text": "Allstate respects user privacy and works to protect personal information.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "COMPANY_COMMITMENT",
+  "stratum": "A"
+ },
+ {
+  "statement_id": "stripe_036_s4",
+  "corpus": "OPPT",
+  "company": "stripe",
+  "text": "State laws and individual companies may provide additional sharing limitations beyond federal law requirements.",
+  "primary": "PRACTICE",
+  "separated": "PRACTICE",
+  "stratum": "C"
+ },
+ {
+  "statement_id": "reddit.com_006_s3",
+  "corpus": "OPP-115",
+  "company": "reddit.com",
+  "text": "Reddit logs and retains indefinitely the IP address from which an account is initially created.",
+  "primary": "PRACTICE",
+  "separated": "PRACTICE",
+  "stratum": "C"
+ },
+ {
+  "statement_id": "walmart_019_s1",
+  "corpus": "OPPT",
+  "company": "walmart",
+  "text": "Walmart adheres to Digital Advertising Alliance self-regulatory principles for interest-based advertising.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "COMPANY_COMMITMENT",
+  "stratum": "A"
+ },
+ {
+  "statement_id": "peloton_033_s2",
+  "corpus": "OPPT",
+  "company": "peloton",
+  "text": "Peloton shares Fitness Data when authorized by the user or their authorized representative.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "PRACTICE",
+  "stratum": "B"
+ },
+ {
+  "statement_id": "fool.com_052_s2",
+  "corpus": "OPP-115",
+  "company": "fool.com",
+  "text": "By using the sites and providing personal data, users consent to data processing in the United States under US laws.",
+  "primary": "PRACTICE",
+  "separated": "PRACTICE",
+  "stratum": "C"
+ },
+ {
+  "statement_id": "cellebrite_010_s3",
+  "corpus": "OPPT",
+  "company": "cellebrite",
+  "text": "Data transfers outside Europe are conducted under standard data protection contract clauses with adequate safeguards determined by the EU Commission.",
+  "primary": "PRACTICE",
+  "separated": "PRACTICE",
+  "stratum": "C"
+ },
+ {
+  "statement_id": "gamestop.com_029_s5",
+  "corpus": "OPP-115",
+  "company": "gamestop.com",
+  "text": "Third-party advertisers have no access to user contact information stored by the company unless the user chooses to share it.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "COMPANY_COMMITMENT",
+  "stratum": "A"
+ },
+ {
+  "statement_id": "sidearmsports.com_011_s2",
+  "corpus": "OPP-115",
+  "company": "sidearmsports.com",
+  "text": "When personal information is collected by a third party other than SIDEARM Sports, users are notified at the same time.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "PRACTICE",
+  "stratum": "B"
+ },
+ {
+  "statement_id": "github_019_s1",
+  "corpus": "OPPT",
+  "company": "github",
+  "text": "GitHub uses administrative, technical, and physical security controls to protect personal data.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "PRACTICE",
+  "stratum": "B"
+ },
+ {
+  "statement_id": "amazon_006_s3",
+  "corpus": "OPPT",
+  "company": "amazon",
+  "text": "The company follows the Payment Card Industry Data Security Standard when handling credit card data.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "PRACTICE",
+  "stratum": "B"
+ },
+ {
+  "statement_id": "meta_138_s1",
+  "corpus": "OPPT",
+  "company": "meta",
+  "text": "Meta shares information with other Meta Companies to promote safety, security and integrity.",
+  "primary": "PRACTICE",
+  "separated": "PRACTICE",
+  "stratum": "C"
+ },
+ {
+  "statement_id": "perplexity_014_s2",
+  "corpus": "OPPT",
+  "company": "perplexity",
+  "text": "For enterprise customers, chat content, file uploads, and metadata are not used for training or fine-tuning AI models.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "COMPANY_COMMITMENT",
+  "stratum": "A"
+ },
+ {
+  "statement_id": "barnesandnoble.com_010_s2",
+  "corpus": "OPP-115",
+  "company": "barnesandnoble.com",
+  "text": "The company respects user preferences regarding their personal information.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "COMPANY_COMMITMENT",
+  "stratum": "A"
+ },
+ {
+  "statement_id": "southwest-airlines_018_s2",
+  "corpus": "OPPT",
+  "company": "southwest-airlines",
+  "text": "The company makes reasonable good faith efforts to remove or anonymize posted content about minors upon user request.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "COMPANY_COMMITMENT",
+  "stratum": "A"
+ },
+ {
+  "statement_id": "geocaching.com_024_s1",
+  "corpus": "OPP-115",
+  "company": "geocaching.com",
+  "text": "Users outside the United States consent to transfer of personal information to the United States.",
+  "primary": "PRACTICE",
+  "separated": "PRACTICE",
+  "stratum": "C"
+ },
+ {
+  "statement_id": "earthkam.org_010_s1",
+  "corpus": "OPP-115",
+  "company": "earthkam.org",
+  "text": "The company limits the number of people with physical access to its database and servers.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "COMPANY_COMMITMENT",
+  "stratum": "A"
+ },
+ {
+  "statement_id": "spotify_018_s1",
+  "corpus": "OPPT",
+  "company": "spotify",
+  "text": "Spotify Service has a minimum age limit that varies by country or region.",
+  "primary": "PRACTICE",
+  "separated": "PRACTICE",
+  "stratum": "C"
+ },
+ {
+  "statement_id": "lexisnexis_021_s2",
+  "corpus": "OPPT",
+  "company": "lexisnexis",
+  "text": "The company may require users to verify their identity to protect privacy and security when processing rights requests.",
+  "primary": "PRACTICE",
+  "separated": "PRACTICE",
+  "stratum": "C"
+ },
+ {
+  "statement_id": "dcccd.edu_015_s1",
+  "corpus": "OPP-115",
+  "company": "dcccd.edu",
+  "text": "DCCCD has implemented industry best practices in security measures to prevent information interception and abuse.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "PRACTICE",
+  "stratum": "B"
+ },
+ {
+  "statement_id": "eyematch-ai_002_s2",
+  "corpus": "OPPT",
+  "company": "eyematch-ai",
+  "text": "The company uses encryption to secure user photos.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "PRACTICE",
+  "stratum": "B"
+ },
+ {
+  "statement_id": "everydayhealth.com_041_s1",
+  "corpus": "OPP-115",
+  "company": "everydayhealth.com",
+  "text": "The company prioritizes security of personal information and undertakes reasonable security measures to protect data on servers.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "COMPANY_COMMITMENT",
+  "stratum": "A"
+ },
+ {
+  "statement_id": "www.loc.gov_003_s1",
+  "corpus": "OPP-115",
+  "company": "www.loc.gov",
+  "text": "The Library collects several types of information automatically without commercial marketing use.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "PRACTICE",
+  "stratum": "B"
+ },
+ {
+  "statement_id": "epic-games_009_s3",
+  "corpus": "OPPT",
+  "company": "epic-games",
+  "text": "Epic receives parent or guardian email addresses directly from child users for parental consent verification.",
+  "primary": "PRACTICE",
+  "separated": "PRACTICE",
+  "stratum": "C"
+ },
+ {
+  "statement_id": "microsoft_014_s2",
+  "corpus": "OPPT",
+  "company": "microsoft",
+  "text": "Microsoft stores personal data on computer systems with limited access in controlled facilities.",
+  "primary": "PRACTICE",
+  "separated": "PRACTICE",
+  "stratum": "C"
+ },
+ {
+  "statement_id": "steampowered.com_017_s2",
+  "corpus": "OPP-115",
+  "company": "steampowered.com",
+  "text": "Valve has taken reasonable steps to protect user information from unauthorized access or disclosure.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "PRACTICE",
+  "stratum": "B"
+ },
+ {
+  "statement_id": "united-airlines_027_s1",
+  "corpus": "OPPT",
+  "company": "united-airlines",
+  "text": "The company maintains physical, electronic, and procedural safeguards to protect user information.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "COMPANY_COMMITMENT",
+  "stratum": "A"
+ },
+ {
+  "statement_id": "disinfo.com_016_s1",
+  "corpus": "OPP-115",
+  "company": "disinfo.com",
+  "text": "Cookies and web beacons used by the company are not linked to personal information.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "PRACTICE",
+  "stratum": "B"
+ },
+ {
+  "statement_id": "redorbit.com_006_s2",
+  "corpus": "OPP-115",
+  "company": "redorbit.com",
+  "text": "The company stores user profiles containing information about individual users' viewing preferences.",
+  "primary": "PRACTICE",
+  "separated": "PRACTICE",
+  "stratum": "C"
+ },
+ {
+  "statement_id": "minecraft.gamepedia.com_009_s2",
+  "corpus": "OPP-115",
+  "company": "minecraft.gamepedia.com",
+  "text": "The company takes children's privacy seriously and encourages parental involvement in children's online experience.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "PRACTICE",
+  "stratum": "B"
+ },
+ {
+  "statement_id": "barnesandnoble.com_053_s2",
+  "corpus": "OPP-115",
+  "company": "barnesandnoble.com",
+  "text": "Protecting privacy and security of personal information is a priority for Barnes & Noble.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "COMPANY_COMMITMENT",
+  "stratum": "A"
+ },
+ {
+  "statement_id": "earthkam.org_009_s1",
+  "corpus": "OPP-115",
+  "company": "earthkam.org",
+  "text": "The company takes reasonable steps to verify parent/guardian identity before granting access to child's personal information.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "PRACTICE",
+  "stratum": "B"
+ },
+ {
+  "statement_id": "meta_075_s3",
+  "corpus": "OPPT",
+  "company": "meta",
+  "text": "The company stops collecting GPS information when users turn off Location Services on their device.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "PRACTICE",
+  "stratum": "B"
+ },
+ {
+  "statement_id": "everydayhealth.com_035_s3",
+  "corpus": "OPP-115",
+  "company": "everydayhealth.com",
+  "text": "The company deletes and removes a child's information from systems upon parent or guardian request.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "PRACTICE",
+  "stratum": "B"
+ },
+ {
+  "statement_id": "msn.com_007_s3",
+  "corpus": "OPP-115",
+  "company": "msn.com",
+  "text": "The company removes the entirety of IP addresses after 6 months of retention.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "COMPANY_COMMITMENT",
+  "stratum": "A"
+ },
+ {
+  "statement_id": "lodgemfg.com_001_s1",
+  "corpus": "OPP-115",
+  "company": "lodgemfg.com",
+  "text": "The company transmits transactions using 128-bit secure socket layers (SSL) for data protection.",
+  "primary": "PRACTICE",
+  "separated": "PRACTICE",
+  "stratum": "C"
+ },
+ {
+  "statement_id": "mlb.mlb.com_031_s5",
+  "corpus": "OPP-115",
+  "company": "mlb.mlb.com",
+  "text": "Children under thirteen without parental consent receive a message indicating ineligibility when attempting to access restricted services.",
+  "primary": "PRACTICE",
+  "separated": "PRACTICE",
+  "stratum": "C"
+ },
+ {
+  "statement_id": "internetbrands.com_100_s2",
+  "corpus": "OPP-115",
+  "company": "internetbrands.com",
+  "text": "The company has a policy not to disclose personal information to third parties for direct marketing if residents opt-out.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "COMPANY_COMMITMENT",
+  "stratum": "A"
+ },
+ {
+  "statement_id": "meta_100_s2",
+  "corpus": "OPPT",
+  "company": "meta",
+  "text": "Third-party apps can retain information previously shared by users even after access expires.",
+  "primary": "PRACTICE",
+  "separated": "PRACTICE",
+  "stratum": "C"
+ },
+ {
+  "statement_id": "bankofamerica.com_075_s2",
+  "corpus": "OPP-115",
+  "company": "bankofamerica.com",
+  "text": "Users may still receive untailored advertising from Bank of America even after opting out of tailored advertising.",
+  "primary": "PRACTICE",
+  "separated": "PRACTICE",
+  "stratum": "C"
+ },
+ {
+  "statement_id": "pimeyes_016_s2",
+  "corpus": "OPPT",
+  "company": "pimeyes",
+  "text": "The company avoids targeting social media, social networking platforms, and professional networks on search engines and crawlers.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "COMPANY_COMMITMENT",
+  "stratum": "A"
+ },
+ {
+  "statement_id": "zacks.com_004_s1",
+  "corpus": "OPP-115",
+  "company": "zacks.com",
+  "text": "During registration, Zacks.com includes user contact information on the Zacks Investment Research opt-in marketing list.",
+  "primary": "PRACTICE",
+  "separated": "PRACTICE",
+  "stratum": "C"
+ },
+ {
+  "statement_id": "tesla_025_s7",
+  "corpus": "OPPT",
+  "company": "tesla",
+  "text": "Tesla applies privacy-preserving techniques or removes personal data from reports before sending analytics to Tesla.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "PRACTICE",
+  "stratum": "B"
+ },
+ {
+  "statement_id": "archives.gov_052_s2",
+  "corpus": "OPP-115",
+  "company": "archives.gov",
+  "text": "Users expressly consent to network traffic monitoring when using this government computer system.",
+  "primary": "PRACTICE",
+  "separated": "PRACTICE",
+  "stratum": "C"
+ },
+ {
+  "statement_id": "roblox_007_s1",
+  "corpus": "OPPT",
+  "company": "roblox",
+  "text": "The company automatically sets stronger privacy settings for accounts of users under 13 years old.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "PRACTICE",
+  "stratum": "B"
+ },
+ {
+  "statement_id": "gravy-analytics_029_s2",
+  "corpus": "OPPT",
+  "company": "gravy-analytics",
+  "text": "The company deletes personal information from its systems if discovered from children under 16.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "COMPANY_COMMITMENT",
+  "stratum": "A"
+ },
+ {
+  "statement_id": "foxsports.com_004_s1",
+  "corpus": "OPP-115",
+  "company": "foxsports.com",
+  "text": "FSD Services are not targeted to children and are designed for a general audience.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "PRACTICE",
+  "stratum": "B"
+ },
+ {
+  "statement_id": "safegraph_007_s1",
+  "corpus": "OPPT",
+  "company": "safegraph",
+  "text": "SafeGraph uses reasonable measures to protect information against unauthorized access, disclosure, alteration, or destruction.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "COMPANY_COMMITMENT",
+  "stratum": "A"
+ },
+ {
+  "statement_id": "acbj.com_005_s1",
+  "corpus": "OPP-115",
+  "company": "acbj.com",
+  "text": "The company collects personally identifiable information with user specific knowledge and consent.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "PRACTICE",
+  "stratum": "B"
+ },
+ {
+  "statement_id": "binance_028_s3",
+  "corpus": "OPPT",
+  "company": "binance",
+  "text": "Binance retains date of birth information when underage individuals attempt KYC identity verification to prevent re-registration and protect platform security.",
+  "primary": "PRACTICE",
+  "separated": "PRACTICE",
+  "stratum": "C"
+ },
+ {
+  "statement_id": "redfin_035_s1",
+  "corpus": "OPPT",
+  "company": "redfin",
+  "text": "Redfin retains personal information as long as the user actively uses the Services.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "COMPANY_COMMITMENT",
+  "stratum": "A"
+ },
+ {
+  "statement_id": "aol.com_040_s1",
+  "corpus": "OPP-115",
+  "company": "aol.com",
+  "text": "AOL Inc. complies with the U.S.-EU Safe Harbor Framework regarding collection, use, and retention of personal information from EU member countries.",
+  "primary": "COMPANY_COMMITMENT",
+  "separated": "COMPANY_COMMITMENT",
+  "stratum": "A"
+ }
+]

@@ -64,6 +64,7 @@ CORPUS_PATHS = {
 }
 
 OUTPUT_DIR = REPO_ROOT / "data"
+MASK_COMPANY = False  # set from --mask-company in main()
 
 
 # ---------------------------------------------------------------------------
@@ -74,6 +75,48 @@ def load_prompt_template() -> str:
     if not PROMPT_FILE.exists():
         raise FileNotFoundError(f"Prompt file not found: {PROMPT_FILE}")
     return PROMPT_FILE.read_text(encoding="utf-8")
+
+
+NAME_FORMS_FILE = OUTPUT_DIR / "company_name_forms.json"
+
+
+def load_name_forms() -> dict:
+    """Company slug -> list of surface forms observed in that company's statements."""
+    with open(NAME_FORMS_FILE) as f:
+        return json.load(f)
+
+
+def mask_company(text: str, company: str, forms: dict) -> str:
+    """Replace observed surface forms of the company name with 'the company'.
+
+    Stems are applied longest-first so 'Khan Academy' is handled before any shorter
+    form. A trailing possessive is preserved as "the company's". A replacement at
+    sentence start is capitalised. Masking is lexical and imperfect by design:
+    product names and unlisted aliases can survive, which the paper discloses.
+    """
+    import re
+    stems = set()
+    for form in forms.get(company, []):
+        stem = form.rstrip(".").strip()
+        if stem.endswith("'s"):
+            stem = stem[:-2]
+        if len(stem) >= 2:
+            stems.add(stem)
+    for stem in sorted(stems, key=len, reverse=True):
+        pattern = re.compile(r"(?<![A-Za-z0-9])" + re.escape(stem) + r"('s)?(?![A-Za-z0-9])")
+        def repl(m, _text=text):
+            rep = "the company's" if m.group(1) else "the company"
+            before = _text[:m.start()].rstrip()
+            if not before or before.endswith((".", "!", "?")):
+                rep = rep[0].upper() + rep[1:]
+            return rep
+        text = pattern.sub(repl, text)
+    # collapse artefacts from multi-token names split by punctuation ("Barnes & Noble")
+    text = re.sub(r"(?i)the company(?:'s)?\s*(?:&|and)\s*the company", "the company", text)
+    text = re.sub(r"(?i)the company\s+the company", "the company", text)
+    # re-capitalise a replacement that now opens the text or a sentence
+    text = re.sub(r"(^|[.!?]\s+)the company", lambda m: m.group(1) + "The company", text)
+    return text
 
 
 def build_prompt(statement_text: str, company: str, template: str) -> str:
@@ -259,7 +302,11 @@ def classify_statement_three_models(
     Returns per-judge classifications, consensus, and metadata.
     """
     judge_ids = ["judge_1", "judge_2", "judge_3"]
-    prompt = build_prompt(statement["text"], statement["company"], template)
+    prompt = build_prompt(
+        statement.get("_prompt_text", statement["text"]),
+        statement.get("_prompt_company", statement["company"]),
+        template,
+    )
     results = {}
 
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
@@ -333,6 +380,7 @@ def classify_statement_three_models(
         "statement_id": statement["statement_id"],
         "company": statement["company"],
         "text": statement["text"],
+        **({"text_masked": statement["_prompt_text"]} if "_prompt_text" in statement else {}),
         "original_type": statement.get("type"),
         "judge_1": results["judge_1"],
         "judge_2": results["judge_2"],
@@ -465,6 +513,9 @@ def main():
     parser.add_argument("--judge-panel", action="store_true",
                         help="Use JUDGE_MODEL_1/2/3 from .env (separated stability panel) "
                              "instead of the legacy MULTIMODEL_1/2/3 panel")
+    parser.add_argument("--mask-company", action="store_true",
+                        help="No-name ablation: replace the company name in the prompt slot and in "
+                             "statement text with 'the company' (forms from data/company_name_forms.json)")
     parser.add_argument("--retry-insufficient", action="store_true",
                         help="With --resume: re-run statements whose stored result is "
                              "insufficient_valid (fewer than 2 valid judge responses, "
@@ -508,6 +559,19 @@ def main():
         random.seed(args.seed)
         statements = random.sample(statements, min(args.sample, len(statements)))
         print(f"  Sampled: {len(statements)}")
+
+    # No-name ablation: mask the company in the prompt slot and in the statement text
+    if args.mask_company:
+        global MASK_COMPANY
+        MASK_COMPANY = True
+        forms = load_name_forms()
+        changed = 0
+        for s in statements:
+            masked = mask_company(s["text"], s["company"], forms)
+            s["_prompt_text"] = masked
+            s["_prompt_company"] = "the company"
+            changed += masked != s["text"]
+        print(f"  Company masking on: {changed} of {len(statements)} statement texts altered; prompt slot set to 'the company'")
 
     # Output path
     if args.output_suffix:
@@ -656,13 +720,15 @@ def _save_results(output_path, results, models, corpus, prompt_hash, started_at,
             "methodology": "three_llm_judge_consensus",
             "classifier_version": "2.0",
             "models": models,
-            "prompt_file": str(PROMPT_FILE),
+            "prompt_file": str(PROMPT_FILE.relative_to(REPO_ROOT)),
             "prompt_hash": prompt_hash,
             "corpus": corpus.upper(),
             "started_at": started_at,
             "updated_at": datetime.now(timezone.utc).isoformat(),
             "total_classified": len(results),
             "total_usage": total_usage,
+            "company_masked": MASK_COMPANY,
+            **({"mask_forms_file": str(NAME_FORMS_FILE.relative_to(REPO_ROOT))} if MASK_COMPANY else {}),
         },
         "agreement_metrics": metrics,
         "results": results,

@@ -359,19 +359,19 @@
           "gold_n": 200,
           "scored_n": 100,
           "unscored_no_consensus": 100,
-          "accuracy": 0.95,
+          "accuracy": 0.94,
           "per_class": {
             "COMPANY_COMMITMENT": {
               "precision": 0.958,
-              "recall": 0.92,
-              "f1": 0.939,
-              "n": 25
+              "recall": 0.885,
+              "f1": 0.92,
+              "n": 26
             },
             "PRACTICE": {
-              "precision": 0.955,
-              "recall": 0.933,
-              "f1": 0.944,
-              "n": 45
+              "precision": 0.932,
+              "recall": 0.932,
+              "f1": 0.932,
+              "n": 44
             },
             "USER_CONTROL": {
               "precision": 0.938,
@@ -382,9 +382,9 @@
           },
           "confusion": {
             "COMPANY_COMMITMENT->COMPANY_COMMITMENT": 23,
-            "COMPANY_COMMITMENT->PRACTICE": 2,
+            "COMPANY_COMMITMENT->PRACTICE": 3,
             "PRACTICE->COMPANY_COMMITMENT": 1,
-            "PRACTICE->PRACTICE": 42,
+            "PRACTICE->PRACTICE": 41,
             "PRACTICE->USER_CONTROL": 2,
             "USER_CONTROL->USER_CONTROL": 30
           }

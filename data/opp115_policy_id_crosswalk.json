@@ -1,0 +1,577 @@
+{
+ "3621": {
+  "domain": "reddit.com",
+  "filename_prefix": 303,
+  "segments_annotated": 284
+ },
+ "3622": {
+  "domain": "washingtonpost.com",
+  "filename_prefix": 200,
+  "segments_annotated": 247
+ },
+ "3623": {
+  "domain": "abcnews.com",
+  "filename_prefix": 186,
+  "segments_annotated": 284
+ },
+ "3624": {
+  "domain": "adweek.com",
+  "filename_prefix": 164,
+  "segments_annotated": 114
+ },
+ "3625": {
+  "domain": "barnesandnoble.com",
+  "filename_prefix": 453,
+  "segments_annotated": 593
+ },
+ "3626": {
+  "domain": "wnep.com",
+  "filename_prefix": 1070,
+  "segments_annotated": 221
+ },
+ "3627": {
+  "domain": "dailynews.com",
+  "filename_prefix": 1683,
+  "segments_annotated": 275
+ },
+ "3628": {
+  "domain": "thehill.com",
+  "filename_prefix": 1360,
+  "segments_annotated": 110
+ },
+ "3629": {
+  "domain": "fredericknewspost.com",
+  "filename_prefix": 481,
+  "segments_annotated": 96
+ },
+ "3630": {
+  "domain": "gawker.com",
+  "filename_prefix": 228,
+  "segments_annotated": 146
+ },
+ "3631": {
+  "domain": "taylorswift.com",
+  "filename_prefix": 1545,
+  "segments_annotated": 176
+ },
+ "3632": {
+  "domain": "ocregister.com",
+  "filename_prefix": 325,
+  "segments_annotated": 134
+ },
+ "3633": {
+  "domain": "mlb.mlb.com",
+  "filename_prefix": 175,
+  "segments_annotated": 219
+ },
+ "3634": {
+  "domain": "freep.com",
+  "filename_prefix": 1089,
+  "segments_annotated": 248
+ },
+ "3635": {
+  "domain": "theatlantic.com",
+  "filename_prefix": 20,
+  "segments_annotated": 220
+ },
+ "3636": {
+  "domain": "dailyillini.com",
+  "filename_prefix": 1637,
+  "segments_annotated": 69
+ },
+ "3637": {
+  "domain": "disinfo.com",
+  "filename_prefix": 862,
+  "segments_annotated": 153
+ },
+ "3638": {
+  "domain": "newsbusters.org",
+  "filename_prefix": 394,
+  "segments_annotated": 245
+ },
+ "3639": {
+  "domain": "style.com",
+  "filename_prefix": 144,
+  "segments_annotated": 211
+ },
+ "3696": {
+  "domain": "neworleansonline.com",
+  "filename_prefix": 98,
+  "segments_annotated": 240
+ },
+ "3697": {
+  "domain": "ifsa-butler.org",
+  "filename_prefix": 541,
+  "segments_annotated": 85
+ },
+ "3698": {
+  "domain": "thefreedictionary.com",
+  "filename_prefix": 642,
+  "segments_annotated": 104
+ },
+ "3699": {
+  "domain": "uh.edu",
+  "filename_prefix": 919,
+  "segments_annotated": 38
+ },
+ "3700": {
+  "domain": "dcccd.edu",
+  "filename_prefix": 1206,
+  "segments_annotated": 93
+ },
+ "3701": {
+  "domain": "austincc.edu",
+  "filename_prefix": 1224,
+  "segments_annotated": 98
+ },
+ "3702": {
+  "domain": "post-gazette.com",
+  "filename_prefix": 1610,
+  "segments_annotated": 158
+ },
+ "3703": {
+  "domain": "walmart.com",
+  "filename_prefix": 348,
+  "segments_annotated": 357
+ },
+ "3704": {
+  "domain": "communitycoffee.com",
+  "filename_prefix": 584,
+  "segments_annotated": 24
+ },
+ "3705": {
+  "domain": "cariboucoffee.com",
+  "filename_prefix": 586,
+  "segments_annotated": 141
+ },
+ "3706": {
+  "domain": "gamestop.com",
+  "filename_prefix": 640,
+  "segments_annotated": 234
+ },
+ "3707": {
+  "domain": "lodgemfg.com",
+  "filename_prefix": 807,
+  "segments_annotated": 122
+ },
+ "3708": {
+  "domain": "allstate.com",
+  "filename_prefix": 1106,
+  "segments_annotated": 287
+ },
+ "3709": {
+  "domain": "acbj.com",
+  "filename_prefix": 1164,
+  "segments_annotated": 238
+ },
+ "3710": {
+  "domain": "ticketmaster.com",
+  "filename_prefix": 1498,
+  "segments_annotated": 160
+ },
+ "3711": {
+  "domain": "esquire.com",
+  "filename_prefix": 58,
+  "segments_annotated": 343
+ },
+ "3712": {
+  "domain": "archives.gov",
+  "filename_prefix": 531,
+  "segments_annotated": 263
+ },
+ "3713": {
+  "domain": "www.loc.gov",
+  "filename_prefix": 559,
+  "segments_annotated": 132
+ },
+ "3714": {
+  "domain": "sltrib.com",
+  "filename_prefix": 1618,
+  "segments_annotated": 336
+ },
+ "3715": {
+  "domain": "opensecrets.org",
+  "filename_prefix": 1205,
+  "segments_annotated": 51
+ },
+ "3716": {
+  "domain": "miaminewtimes.com",
+  "filename_prefix": 1419,
+  "segments_annotated": 180
+ },
+ "3717": {
+  "domain": "sheknows.com",
+  "filename_prefix": 82,
+  "segments_annotated": 282
+ },
+ "3718": {
+  "domain": "reference.com",
+  "filename_prefix": 207,
+  "segments_annotated": 230
+ },
+ "3719": {
+  "domain": "boardgamegeek.com",
+  "filename_prefix": 456,
+  "segments_annotated": 66
+ },
+ "3720": {
+  "domain": "cbsinteractive.com",
+  "filename_prefix": 641,
+  "segments_annotated": 86
+ },
+ "3721": {
+  "domain": "minecraft.gamepedia.com",
+  "filename_prefix": 744,
+  "segments_annotated": 145
+ },
+ "3722": {
+  "domain": "mohegansun.com",
+  "filename_prefix": 995,
+  "segments_annotated": 41
+ },
+ "3723": {
+  "domain": "rockstargames.com",
+  "filename_prefix": 1468,
+  "segments_annotated": 355
+ },
+ "3724": {
+  "domain": "steampowered.com",
+  "filename_prefix": 1470,
+  "segments_annotated": 112
+ },
+ "3725": {
+  "domain": "lids.com",
+  "filename_prefix": 1694,
+  "segments_annotated": 216
+ },
+ "3726": {
+  "domain": "timeinc.com",
+  "filename_prefix": 320,
+  "segments_annotated": 237
+ },
+ "3727": {
+  "domain": "kaleidahealth.org",
+  "filename_prefix": 517,
+  "segments_annotated": 330
+ },
+ "3728": {
+  "domain": "coffeereview.com",
+  "filename_prefix": 581,
+  "segments_annotated": 94
+ },
+ "3729": {
+  "domain": "naturalnews.com",
+  "filename_prefix": 884,
+  "segments_annotated": 18
+ },
+ "3730": {
+  "domain": "everydayhealth.com",
+  "filename_prefix": 891,
+  "segments_annotated": 264
+ },
+ "3731": {
+  "domain": "uptodate.com",
+  "filename_prefix": 898,
+  "segments_annotated": 63
+ },
+ "3732": {
+  "domain": "gwdocs.com",
+  "filename_prefix": 1221,
+  "segments_annotated": 29
+ },
+ "3733": {
+  "domain": "fortune.com",
+  "filename_prefix": 133,
+  "segments_annotated": 273
+ },
+ "3734": {
+  "domain": "chasepaymentech.com",
+  "filename_prefix": 1306,
+  "segments_annotated": 279
+ },
+ "3735": {
+  "domain": "tgifridays.com",
+  "filename_prefix": 331,
+  "segments_annotated": 124
+ },
+ "3736": {
+  "domain": "buffalowildwings.com",
+  "filename_prefix": 503,
+  "segments_annotated": 163
+ },
+ "3737": {
+  "domain": "randomhouse.com",
+  "filename_prefix": 652,
+  "segments_annotated": 350
+ },
+ "3738": {
+  "domain": "restaurantnews.com",
+  "filename_prefix": 676,
+  "segments_annotated": 48
+ },
+ "3739": {
+  "domain": "tangeroutlet.com",
+  "filename_prefix": 701,
+  "segments_annotated": 17
+ },
+ "3740": {
+  "domain": "zacks.com",
+  "filename_prefix": 1261,
+  "segments_annotated": 86
+ },
+ "3741": {
+  "domain": "imdb.com",
+  "filename_prefix": 21,
+  "segments_annotated": 184
+ },
+ "3787": {
+  "domain": "citizen.org",
+  "filename_prefix": 1264,
+  "segments_annotated": 92
+ },
+ "3788": {
+  "domain": "jibjab.com",
+  "filename_prefix": 1510,
+  "segments_annotated": 325
+ },
+ "3789": {
+  "domain": "msn.com",
+  "filename_prefix": 1582,
+  "segments_annotated": 209
+ },
+ "3790": {
+  "domain": "voxmedia.com",
+  "filename_prefix": 32,
+  "segments_annotated": 231
+ },
+ "3819": {
+  "domain": "amazon.com",
+  "filename_prefix": 105,
+  "segments_annotated": 312
+ },
+ "3820": {
+  "domain": "stlouisfed.org",
+  "filename_prefix": 928,
+  "segments_annotated": 161
+ },
+ "3821": {
+  "domain": "lynda.com",
+  "filename_prefix": 962,
+  "segments_annotated": 503
+ },
+ "3822": {
+  "domain": "fool.com",
+  "filename_prefix": 1259,
+  "segments_annotated": 356
+ },
+ "3823": {
+  "domain": "liquor.com",
+  "filename_prefix": 59,
+  "segments_annotated": 68
+ },
+ "3824": {
+  "domain": "meredith.com",
+  "filename_prefix": 70,
+  "segments_annotated": 520
+ },
+ "3825": {
+  "domain": "foodallergy.org",
+  "filename_prefix": 202,
+  "segments_annotated": 148
+ },
+ "3826": {
+  "domain": "usa.gov",
+  "filename_prefix": 523,
+  "segments_annotated": 87
+ },
+ "3827": {
+  "domain": "eatchicken.com",
+  "filename_prefix": 745,
+  "segments_annotated": 20
+ },
+ "3828": {
+  "domain": "kraftrecipes.com",
+  "filename_prefix": 746,
+  "segments_annotated": 302
+ },
+ "3829": {
+  "domain": "aol.com",
+  "filename_prefix": 1034,
+  "segments_annotated": 300
+ },
+ "3830": {
+  "domain": "abita.com",
+  "filename_prefix": 571,
+  "segments_annotated": 94
+ },
+ "3831": {
+  "domain": "nbcuniversal.com",
+  "filename_prefix": 33,
+  "segments_annotated": 334
+ },
+ "3832": {
+  "domain": "military.com",
+  "filename_prefix": 686,
+  "segments_annotated": 243
+ },
+ "3833": {
+  "domain": "si.edu",
+  "filename_prefix": 760,
+  "segments_annotated": 98
+ },
+ "3834": {
+  "domain": "playstation.com",
+  "filename_prefix": 635,
+  "segments_annotated": 212
+ },
+ "3835": {
+  "domain": "solarviews.com",
+  "filename_prefix": 988,
+  "segments_annotated": 9
+ },
+ "3836": {
+  "domain": "honda.com",
+  "filename_prefix": 1050,
+  "segments_annotated": 389
+ },
+ "3837": {
+  "domain": "highgearmedia.com",
+  "filename_prefix": 1083,
+  "segments_annotated": 185
+ },
+ "3838": {
+  "domain": "tulsaworld.com",
+  "filename_prefix": 1673,
+  "segments_annotated": 337
+ },
+ "3839": {
+  "domain": "sports-reference.com",
+  "filename_prefix": 1703,
+  "segments_annotated": 175
+ },
+ "3840": {
+  "domain": "vikings.com",
+  "filename_prefix": 359,
+  "segments_annotated": 289
+ },
+ "3841": {
+  "domain": "sidearmsports.com",
+  "filename_prefix": 1636,
+  "segments_annotated": 334
+ },
+ "3842": {
+  "domain": "foxsports.com",
+  "filename_prefix": 1708,
+  "segments_annotated": 255
+ },
+ "3843": {
+  "domain": "latinpost.com",
+  "filename_prefix": 1713,
+  "segments_annotated": 532
+ },
+ "3844": {
+  "domain": "bankofamerica.com",
+  "filename_prefix": 1300,
+  "segments_annotated": 428
+ },
+ "3845": {
+  "domain": "ted.com",
+  "filename_prefix": 883,
+  "segments_annotated": 164
+ },
+ "3846": {
+  "domain": "ironhorsevineyards.com",
+  "filename_prefix": 817,
+  "segments_annotated": 39
+ },
+ "3847": {
+  "domain": "internetbrands.com",
+  "filename_prefix": 940,
+  "segments_annotated": 525
+ },
+ "3848": {
+  "domain": "enthusiastnetwork.com",
+  "filename_prefix": 1099,
+  "segments_annotated": 258
+ },
+ "3849": {
+  "domain": "pbs.org",
+  "filename_prefix": 93,
+  "segments_annotated": 203
+ },
+ "3850": {
+  "domain": "instagram.com",
+  "filename_prefix": 135,
+  "segments_annotated": 272
+ },
+ "3851": {
+  "domain": "washingtonian.com",
+  "filename_prefix": 414,
+  "segments_annotated": 123
+ },
+ "3852": {
+  "domain": "dairyqueen.com",
+  "filename_prefix": 627,
+  "segments_annotated": 109
+ },
+ "3853": {
+  "domain": "wsmv.com",
+  "filename_prefix": 1666,
+  "segments_annotated": 246
+ },
+ "3854": {
+  "domain": "yahoo.com",
+  "filename_prefix": 1361,
+  "segments_annotated": 167
+ },
+ "3855": {
+  "domain": "education.jlab.org",
+  "filename_prefix": 777,
+  "segments_annotated": 36
+ },
+ "3856": {
+  "domain": "sciencemag.org",
+  "filename_prefix": 856,
+  "segments_annotated": 245
+ },
+ "3858": {
+  "domain": "dogbreedinfo.com",
+  "filename_prefix": 723,
+  "segments_annotated": 27
+ },
+ "3861": {
+  "domain": "geocaching.com",
+  "filename_prefix": 1539,
+  "segments_annotated": 230
+ },
+ "3864": {
+  "domain": "google.com",
+  "filename_prefix": 591,
+  "segments_annotated": 292
+ },
+ "3867": {
+  "domain": "nytimes.com",
+  "filename_prefix": 26,
+  "segments_annotated": 382
+ },
+ "3905": {
+  "domain": "sci-news.com",
+  "filename_prefix": 1017,
+  "segments_annotated": 58
+ },
+ "3906": {
+  "domain": "redorbit.com",
+  "filename_prefix": 1028,
+  "segments_annotated": 200
+ },
+ "3907": {
+  "domain": "cincymuseum.org",
+  "filename_prefix": 1252,
+  "segments_annotated": 155
+ },
+ "3908": {
+  "domain": "earthkam.org",
+  "filename_prefix": 907,
+  "segments_annotated": 94
+ }
+}

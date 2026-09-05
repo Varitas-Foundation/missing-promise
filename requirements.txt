@@ -2,5 +2,6 @@
 httpx>=0.27
 python-dotenv>=1.0
 
-# Stability comparison (scripts/stability_comparison.py) only
+# Stability comparison, ablation comparison, and inferential statistics
+# (scripts/stability_comparison.py, scripts/ablation_comparison.py, scripts/analyze_inferential.py)
 scipy>=1.12
